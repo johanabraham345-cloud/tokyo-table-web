@@ -51,6 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Mobile Menu ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+    }
+
     // --- Hero Background Slider ---
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
@@ -78,25 +88,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Menu Rendering ---
     const menuGrid = document.getElementById('menuGrid');
     const filterBtns = document.querySelectorAll('.tab-btn');
+    const seeMoreBtn = document.getElementById('seeMoreMenu');
+    const menuBatchSize = 12;
+    let activeFilter = 'all';
+    let visibleMenuCount = menuBatchSize;
 
-    function renderMenu(filter = 'all') {
+    const categoryLabels = {
+        udon: 'Udon',
+        sides: 'Sides',
+        drinks: 'Beverage',
+        dessert: 'Dessert'
+    };
+    const categoryMarks = {
+        udon: '麺',
+        sides: '皿',
+        drinks: '茶',
+        dessert: '甘'
+    };
+
+    function renderMenu(filter = activeFilter) {
         menuGrid.innerHTML = '';
+        activeFilter = filter;
         
         const filteredData = filter === 'all' 
             ? menuData 
             : menuData.filter(item => item.category === filter);
 
-        filteredData.forEach((item, index) => {
+        filteredData.slice(0, visibleMenuCount).forEach((item, index) => {
             const el = document.createElement('div');
             el.className = 'menu-item';
+            el.dataset.jp = categoryMarks[item.category] || '食';
             el.style.animationDelay = `${index * 0.05}s`;
-            
-            const categoryLabels = {
-                udon: 'Udon',
-                sides: 'Sides',
-                drinks: 'Beverage',
-                dessert: 'Dessert'
-            };
 
             el.innerHTML = `
                 <span class="item-cat">${categoryLabels[item.category]}</span>
@@ -107,17 +129,30 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('click', () => openModal(item));
             menuGrid.appendChild(el);
         });
+
+        if (seeMoreBtn) {
+            const remaining = filteredData.length - visibleMenuCount;
+            seeMoreBtn.style.display = remaining > 0 ? 'inline-flex' : 'none';
+            seeMoreBtn.textContent = remaining > menuBatchSize ? 'See More' : `See ${remaining} More`;
+        }
     }
 
     renderMenu(); // Initial render
-
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            visibleMenuCount = menuBatchSize;
             renderMenu(btn.getAttribute('data-filter'));
         });
     });
+
+    if (seeMoreBtn) {
+        seeMoreBtn.addEventListener('click', () => {
+            visibleMenuCount += menuBatchSize;
+            renderMenu(activeFilter);
+        });
+    }
 
     // --- Modal Logic ---
     const modal = document.getElementById('itemModal');
@@ -190,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCartUI() {
         if (cart.length === 0) {
-            cartContainer.innerHTML = '<div class="empty-cart-msg">Your cart is elegantly empty. Select items from our menu.</div>';
+            cartContainer.innerHTML = '<div class="empty-cart-msg">Your table is waiting. Choose a masterpiece from the menu.</div>';
             cartTotalContainer.style.display = 'none';
             submitOrderBtn.disabled = true;
             return;
@@ -226,32 +261,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Checkout Form Submit
     const checkoutForm = document.getElementById('checkout-form');
     const orderSuccessMsg = document.getElementById('order-success');
+    const whatsappNumber = '917736696950';
+
+    function buildWhatsAppOrderMessage() {
+        const name = document.getElementById('cust-name').value.trim();
+        const phone = document.getElementById('cust-phone').value.trim();
+        const address = document.getElementById('cust-address').value.trim();
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const lines = cart.map(item => `- ${item.name} x ${item.quantity} = ₹${item.price * item.quantity}`).join('\n');
+
+        return `Hello Tokyo Table, I would like to place an order.\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nOrder:\n${lines}\n\nTotal: ₹${total}`;
+    }
 
     checkoutForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         if (cart.length === 0) return;
 
-        submitOrderBtn.innerHTML = 'Processing...';
-        submitOrderBtn.disabled = true;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(buildWhatsAppOrderMessage())}`;
+        window.open(whatsappUrl, '_blank');
 
-        // Simulate API call
+        submitOrderBtn.innerHTML = '<i class="ph ph-whatsapp-logo"></i> Sent to WhatsApp';
+        orderSuccessMsg.classList.add('active');
+
         setTimeout(() => {
-            checkoutForm.style.display = 'none';
-            orderSuccessMsg.classList.add('active');
-            
-            // Clear cart
-            cart = [];
+            orderSuccessMsg.classList.remove('active');
+            submitOrderBtn.innerHTML = '<i class="ph ph-whatsapp-logo"></i> Send on WhatsApp';
             updateCartUI();
-            
-            // Reset after 5 seconds
-            setTimeout(() => {
-                orderSuccessMsg.classList.remove('active');
-                checkoutForm.reset();
-                checkoutForm.style.display = 'block';
-                submitOrderBtn.innerHTML = 'Place Order';
-            }, 5000);
-            
-        }, 1500);
+        }, 3500);
     });
 });
+
+
+

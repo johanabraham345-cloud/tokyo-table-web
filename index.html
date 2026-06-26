@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -27,6 +27,16 @@
         </ul>
         <div class="nav-actions">
             <a href="#order" class="btn btn-outline nav-btn">Order Online</a>
+
+            <!-- Auth / Admin nav buttons -->
+            <button class="nav-user-btn" id="navSignInBtn" title="Admin Sign In" aria-label="Admin sign in">
+                <i class="ph ph-user-circle"></i>
+            </button>
+            <button class="nav-user-btn nav-admin-btn" id="navAdminBtn" title="Open Admin Panel" aria-label="Admin panel" style="display:none">
+                <i class="ph ph-shield-check"></i>
+                <span id="navUserEmail"></span>
+            </button>
+
             <div class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span></div>
         </div>
     </div>
@@ -161,54 +171,32 @@
             <h2 class="section-title">What Guests Are Saying</h2>
             <div class="title-underline center"></div>
         </div>
-
         <div class="reviews-grid reveal">
             <div class="review-card">
                 <div class="review-header">
                     <img src="images/avatar-joel.png" alt="Joel Davis" class="review-avatar-img">
-                    <div class="review-meta">
-                        <h4>Joel Davis</h4>
-                        <span class="review-badge">Local Guide · 25 reviews · 41 photos</span>
-                    </div>
+                    <div class="review-meta"><h4>Joel Davis</h4><span class="review-badge">Local Guide · 25 reviews · 41 photos</span></div>
                 </div>
-                <div class="review-rating">
-                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    <span class="review-time">4 months ago</span>
-                </div>
+                <div class="review-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><span class="review-time">4 months ago</span></div>
                 <p class="review-text">I visited this place with my cousin and the food was really good as of what I tried but the customer service was one of the best I have had, the owner called us boss😄 and welcomed us in and he was very friendly. The items I would recommend would be the dry beef udon and the dynamite chicken, the dynamite chicken was soo good that by the time we thought of taking the photo we only had 3 piece remaining. Must try spot if you are near Aluva.</p>
             </div>
-
             <div class="review-card">
                 <div class="review-header">
                     <img src="images/avatar-nisha.png" alt="Nisha Francis" class="review-avatar-img">
-                    <div class="review-meta">
-                        <h4>Nisha Francis</h4>
-                        <span class="review-badge">Local Guide · 5 reviews · 5 photos</span>
-                    </div>
+                    <div class="review-meta"><h4>Nisha Francis</h4><span class="review-badge">Local Guide · 5 reviews · 5 photos</span></div>
                 </div>
-                <div class="review-rating">
-                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    <span class="review-time">3 months ago</span>
-                </div>
+                <div class="review-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><span class="review-time">3 months ago</span></div>
                 <p class="review-text">We tried the chicken noodles udon, and dynamite chicken — all were absolutely delicious! The dynamite chicken was perfectly crispy and flavourful, and the sauces were just amazing, adding the perfect taste to every bite. Overall, a great place to enjoy tasty food. Will definitely visit again! 😊</p>
             </div>
-
             <div class="review-card">
                 <div class="review-header">
                     <img src="images/avatar-anannya.png" alt="Anannya Bhaskar" class="review-avatar-img">
-                    <div class="review-meta">
-                        <h4>Anannya Bhaskar</h4>
-                        <span class="review-badge">6 reviews · 7 photos</span>
-                    </div>
+                    <div class="review-meta"><h4>Anannya Bhaskar</h4><span class="review-badge">6 reviews · 7 photos</span></div>
                 </div>
-                <div class="review-rating">
-                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    <span class="review-time">4 months ago</span>
-                </div>
+                <div class="review-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><span class="review-time">4 months ago</span></div>
                 <p class="review-text">Absolutely loved our experience at Tokyo Table! We started with the Dynamite Chicken — hands down excellent. Then tried the rice bowl with fried chicken, fried chicken udon, and soupy beef udon — every single dish was exceptional, comforting, and bursting with flavor.</p>
             </div>
         </div>
-
         <div class="reviews-action reveal">
             <a href="https://www.google.com/maps/place/Tokyo+Table+Japanese+cafe/@10.0782234,76.3768474,16z/data=!4m15!1m8!3m7!1s0x3b080b001584c8e1:0x7284343944838302!2sTokyo+Table+Japanese+cafe!8m2!3d10.0782234!4d76.3768474!10e9!16s%2Fg%2F11l_4mglsk!3m5!1s0x3b080b001584c8e1:0x7284343944838302!8m2!3d10.0782234!4d76.3768474!16s%2Fg%2F11l_4mglsk?entry=ttu" target="_blank" class="btn btn-outline">
                 <i class="ph ph-google-logo"></i> View all 208 reviews on Google Maps
@@ -264,7 +252,7 @@
             <h4>Platforms</h4>
             <a href="https://wa.me/917736696950" target="_blank"><i class="ph ph-whatsapp-logo"></i> WhatsApp</a>
             <a href="https://www.instagram.com/tokyo.table95/" target="_blank"><i class="ph ph-instagram-logo"></i> Instagram</a>
-            <a href="https://www.google.com/maps/place/Tokyo+Table+Japanese+cafe/@10.0782234,76.3768474,16z/data=!4m15!1m8!3m7!1s0x3b080b001584c8e1:0x7284343944838302!2sTokyo+Table+Japanese+cafe!8m2!3d10.0782234!4d76.3768474!10e9!16s%2Fg%2F11l_4mglsk!3m5!1s0x3b080b001584c8e1:0x7284343944838302!8m2!3d10.0782234!4d76.3768474!16s%2Fg%2F11l_4mglsk?entry=ttu" target="_blank"><i class="ph ph-map-pin"></i> Google Maps</a>
+            <a href="https://www.google.com/maps/place/Tokyo+Table+Japanese+cafe/@10.0782234,76.3768474,16z" target="_blank"><i class="ph ph-map-pin"></i> Google Maps</a>
         </div>
         <div class="footer-column">
             <h4>Visit</h4>
@@ -276,7 +264,7 @@
     <div class="footer-bottom"><p>&copy; 2026 Tokyo Table. All rights reserved. Japanese Cafe · Udon · Karaage · Matcha · Aluva, Kerala.</p></div>
 </footer>
 
-<!-- Modal -->
+<!-- Item Detail Modal -->
 <div id="itemModal" class="modal-backdrop">
     <div class="modal-window">
         <button class="modal-close" id="modalClose"><i class="ph ph-x"></i></button>
@@ -286,20 +274,147 @@
                 <span class="modal-category" id="modalCat"></span>
                 <h2 class="modal-title" id="modalTitle"></h2>
                 <div class="modal-price" id="modalPrice"></div>
-                <div class="modal-details">
-                    <h3>Dish Details</h3>
-                    <p id="modalIng"></p>
-                </div>
+                <div class="modal-details"><h3>Dish Details</h3><p id="modalIng"></p></div>
                 <button class="btn btn-primary btn-full modal-add-btn" id="modalAddBtn">Add to Order</button>
             </div>
         </div>
     </div>
 </div>
 
-<script src="app.js?v=3"></script>
+<!-- ══════════════════════════════════════════════════════════════════════════
+     AUTH MODAL
+══════════════════════════════════════════════════════════════════════════ -->
+<div id="authModal" class="auth-modal-backdrop">
+    <div class="auth-modal">
+        <button class="auth-close" id="authClose"><i class="ph ph-x"></i></button>
+        <div class="auth-header">
+            <img src="images/logo-black.png" alt="Tokyo Table" class="auth-logo">
+            <h2>Admin Sign In</h2>
+            <p>Access is restricted to authorised administrators only.</p>
+        </div>
+
+        <!-- Google -->
+        <button id="googleSignInBtn" class="btn-google">
+            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M17.64 9.205c0-.639-.057-1.252-.164-1.841H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332Z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58Z" fill="#EA4335"/></svg>
+            Continue with Google
+        </button>
+
+        <div class="auth-divider"><span>or sign in with email</span></div>
+
+        <!-- Email / Password -->
+        <form id="emailAuthForm" autocomplete="on">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="authEmail" placeholder="admin@example.com" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="authPassword" placeholder="••••••••" required>
+            </div>
+            <div class="auth-error" id="authError"></div>
+            <button type="submit" class="btn btn-primary btn-full" id="emailSubmitBtn">Sign In</button>
+        </form>
+
+        <p class="auth-toggle-line">
+            <span id="authModeLabel">Don't have an account? </span>
+            <button class="auth-toggle-btn" id="authToggleMode">Create account</button>
+        </p>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ADMIN PANEL (slide-in sidebar)
+══════════════════════════════════════════════════════════════════════════ -->
+<div id="adminOverlay" class="admin-overlay"></div>
+
+<aside id="adminPanel" class="admin-panel">
+    <div class="admin-header">
+        <div>
+            <h2 class="admin-title"><i class="ph ph-shield-check"></i> Admin Panel</h2>
+            <p class="admin-user-line" id="adminUserEmail"></p>
+        </div>
+        <div class="admin-header-actions">
+            <button class="admin-btn-signout" id="adminSignOut"><i class="ph ph-sign-out"></i> Sign Out</button>
+            <button class="admin-close-btn" id="adminClose"><i class="ph ph-x"></i></button>
+        </div>
+    </div>
+
+    <div class="admin-body">
+
+        <!-- Seed banner (shown when Firestore is empty) -->
+        <div class="seed-banner" id="seedBanner" style="display:none">
+            <i class="ph ph-database"></i>
+            <div>
+                <strong>Menu not yet in database.</strong>
+                <p>Firestore is empty. Click to push the built-in 29 items to get started.</p>
+            </div>
+            <button class="btn btn-primary" id="seedMenuBtn">Initialize Menu</button>
+        </div>
+
+        <!-- Add / Edit form -->
+        <div class="admin-form-section">
+            <h3 class="admin-section-title" id="addFormTitle">Add New Item</h3>
+            <form id="adminAddForm" class="admin-add-form">
+                <input type="hidden" id="editItemId">
+                <div class="admin-form-row">
+                    <div class="input-group">
+                        <label>Item Name</label>
+                        <input type="text" id="addName" placeholder="e.g. Chicken Udon" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Category</label>
+                        <select id="addCategory" required>
+                            <option value="">Select…</option>
+                            <option value="udon">Udon</option>
+                            <option value="sides">Sides</option>
+                            <option value="drinks">Beverages</option>
+                            <option value="dessert">Dessert</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Price (₹)</label>
+                        <input type="number" id="addPrice" placeholder="e.g. 230" min="1" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Ingredients / Description</label>
+                    <textarea id="addIngredients" rows="2" placeholder="Short description of the dish…" required></textarea>
+                </div>
+                <div class="admin-form-actions">
+                    <button type="submit" class="btn btn-primary" id="addSubmitBtn">Add Item</button>
+                    <button type="button" class="btn btn-outline" id="addCancelBtn" style="display:none">Cancel Edit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Item list -->
+        <div class="admin-list-section">
+            <div class="admin-list-header">
+                <h3 class="admin-section-title">Menu Items <span class="admin-count" id="adminItemCount">0</span></h3>
+                <div class="admin-tabs">
+                    <button class="admin-tab-btn active" data-filter="all">All</button>
+                    <button class="admin-tab-btn" data-filter="udon">Udon</button>
+                    <button class="admin-tab-btn" data-filter="sides">Sides</button>
+                    <button class="admin-tab-btn" data-filter="drinks">Drinks</button>
+                    <button class="admin-tab-btn" data-filter="dessert">Dessert</button>
+                </div>
+            </div>
+            <div id="adminItemsList" class="admin-items-list">
+                <p class="admin-empty">Loading menu…</p>
+            </div>
+        </div>
+
+    </div><!-- /admin-body -->
+</aside>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SCRIPTS — Firebase must load before firebase-config.js
+══════════════════════════════════════════════════════════════════════════ -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js?v=4"></script>
+<script src="admin.js?v=4"></script>
 </body>
 </html>
-
-
-
-

@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokyo Table | Japanese Cafe</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="style.css?v=4">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokyo Table | Japanese Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <a href="#home" class="nav-logo-area">
-            <span class="logo-text">TOKYO TABLE</span>
+            <img src="images/logo-white.png" alt="Tokyo Table" class="nav-logo-img logo-on-dark">
+            <img src="images/logo-black.png" alt="Tokyo Table" class="nav-logo-img logo-on-light">
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#about">About</a></li>
@@ -26,20 +27,12 @@
         </ul>
         <div class="nav-actions">
             <a href="#order" class="btn btn-outline nav-btn">Order Online</a>
-
-            <button class="nav-user-btn" id="navSignInBtn" title="Admin Sign In" aria-label="Admin sign in">
-                <i class="ph ph-user-circle"></i>
-            </button>
-            <button class="nav-user-btn nav-admin-btn" id="navAdminBtn" title="Open Admin Panel" aria-label="Admin panel" style="display:none">
-                <i class="ph ph-shield-check"></i>
-                <span id="navUserEmail"></span>
-            </button>
-
             <div class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span></div>
         </div>
     </div>
 </nav>
 
+<!-- Hero -->
 <section id="home" class="hero">
     <div class="hero-slider">
         <div class="hero-bg hero-slide active" style="background-image: url('images/Tokyo_Table_Exterior__7_.png');"></div>
@@ -58,6 +51,7 @@
     </div>
 </section>
 
+<!-- Services -->
 <div class="services-bar">
     <div class="container services-grid">
         <div class="service-stamp">いらっしゃいませ</div>
@@ -69,6 +63,7 @@
     </div>
 </div>
 
+<!-- About -->
 <section id="about" class="about section-padding">
     <div class="container about-layout">
         <div class="about-text reveal">
@@ -78,18 +73,17 @@
             <p class="section-desc">From hand-pulled Udon bowls simmered slow to crisp, golden Karaage fried to order, every plate at Tokyo Table is built for a genuine Japanese café experience — unhurried, comforting, and full of flavour. Whether you join us in-house or order in, we bring that spirit straight to your table.</p>
             <div class="about-stats">
                 <div class="about-stat"><strong>200+</strong><span>5-Star Reviews</span></div>
-                <div class="about-stat"><strong>29</strong><span>Dishes & Drinks</span></div>
+                <div class="about-stat"><strong>29</strong><span>Dishes &amp; Drinks</span></div>
                 <div class="about-stat"><strong>7</strong><span>Days a Week</span></div>
             </div>
         </div>
         <div class="about-image reveal">
-            <div class="image-wrapper">
-                <img src="images/Tokyo_Table_Exterior__1_.png" alt="Tokyo Table exterior">
-            </div>
+            <img src="images/Tokyo_Table_Exterior__1_.png" alt="Tokyo Table exterior">
         </div>
     </div>
 </section>
 
+<!-- Menu -->
 <section id="menu" class="menu section-padding">
     <div class="container">
         <div class="section-header reveal">
@@ -111,6 +105,7 @@
     </div>
 </section>
 
+<!-- Order -->
 <section id="order" class="order section-padding">
     <div class="container">
         <div class="section-header reveal">
@@ -126,16 +121,16 @@
                     <div class="input-row">
                         <div class="input-group">
                             <label>Full Name</label>
-                            <input type="text" id="cust-name" required placeholder="Your Name">
+                            <input type="text" id="cust-name" required>
                         </div>
                         <div class="input-group">
                             <label>Phone Number</label>
-                            <input type="tel" id="cust-phone" required placeholder="10-digit number">
+                            <input type="tel" id="cust-phone" required>
                         </div>
                     </div>
                     <div class="input-group">
                         <label>Delivery Address</label>
-                        <input type="text" id="cust-address" required placeholder="Complete delivery location">
+                        <input type="text" id="cust-address" required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full" id="submit-order" disabled><i class="ph ph-whatsapp-logo"></i> Send on WhatsApp</button>
                 </form>
@@ -158,6 +153,7 @@
     </div>
 </section>
 
+<!-- Reviews -->
 <section id="reviews" class="reviews section-padding">
     <div class="container">
         <div class="section-header reveal">
@@ -165,37 +161,63 @@
             <h2 class="section-title">What Guests Are Saying</h2>
             <div class="title-underline center"></div>
         </div>
+
         <div class="reviews-grid reveal">
             <div class="review-card">
                 <div class="review-header">
-                    <div class="review-meta"><h4>Joel Davis</h4><span class="review-badge">Local Guide · 25 reviews</span></div>
+                    <img src="images/avatar-joel.png" alt="Joel Davis" class="review-avatar-img">
+                    <div class="review-meta">
+                        <h4>Joel Davis</h4>
+                        <span class="review-badge">Local Guide · 25 reviews · 41 photos</span>
+                    </div>
                 </div>
-                <div class="review-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><span class="review-time">4 months ago</span></div>
-                <p class="review-text">I visited this place with my cousin and the food was really good as of what I tried but the customer service was one of the best I have had, the owner called us boss😄 and welcomed us in and he was very friendly. The items I would recommend would be the dry beef udon and the dynamite chicken. Must try spot if you are near Aluva.</p>
+                <div class="review-rating">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    <span class="review-time">4 months ago</span>
+                </div>
+                <p class="review-text">I visited this place with my cousin and the food was really good as of what I tried but the customer service was one of the best I have had, the owner called us boss😄 and welcomed us in and he was very friendly. The items I would recommend would be the dry beef udon and the dynamite chicken, the dynamite chicken was soo good that by the time we thought of taking the photo we only had 3 piece remaining. Must try spot if you are near Aluva.</p>
             </div>
+
             <div class="review-card">
                 <div class="review-header">
-                    <div class="review-meta"><h4>Nisha Francis</h4><span class="review-badge">Local Guide · 5 reviews</span></div>
+                    <img src="images/avatar-nisha.png" alt="Nisha Francis" class="review-avatar-img">
+                    <div class="review-meta">
+                        <h4>Nisha Francis</h4>
+                        <span class="review-badge">Local Guide · 5 reviews · 5 photos</span>
+                    </div>
                 </div>
-                <div class="review-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><span class="review-time">3 months ago</span></div>
-                <p class="review-text">We tried the chicken noodles udon, and dynamite chicken — all were absolutely delicious! The dynamite chicken was perfectly crispy and flavourful, and the sauces were just amazing, adding the perfect taste to every bite. Will definitely visit again! 😊</p>
+                <div class="review-rating">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    <span class="review-time">3 months ago</span>
+                </div>
+                <p class="review-text">We tried the chicken noodles udon, and dynamite chicken — all were absolutely delicious! The dynamite chicken was perfectly crispy and flavourful, and the sauces were just amazing, adding the perfect taste to every bite. Overall, a great place to enjoy tasty food. Will definitely visit again! 😊</p>
             </div>
+
             <div class="review-card">
                 <div class="review-header">
-                    <div class="review-meta"><h4>Anannya Bhaskar</h4><span class="review-badge">6 reviews</span></div>
+                    <img src="images/avatar-anannya.png" alt="Anannya Bhaskar" class="review-avatar-img">
+                    <div class="review-meta">
+                        <h4>Anannya Bhaskar</h4>
+                        <span class="review-badge">6 reviews · 7 photos</span>
+                    </div>
                 </div>
-                <div class="review-rating"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><span class="review-time">4 months ago</span></div>
+                <div class="review-rating">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    <span class="review-time">4 months ago</span>
+                </div>
                 <p class="review-text">Absolutely loved our experience at Tokyo Table! We started with the Dynamite Chicken — hands down excellent. Then tried the rice bowl with fried chicken, fried chicken udon, and soupy beef udon — every single dish was exceptional, comforting, and bursting with flavor.</p>
             </div>
         </div>
+
         <div class="reviews-action reveal">
-            <a href="#" target="_blank" class="btn btn-outline">
+            <a href="https://www.google.com/maps/place/Tokyo+Table+Japanese+cafe/@10.0782234,76.3768474,16z/data=!4m15!1m8!3m7!1s0x3b080b001584c8e1:0x7284343944838302!2sTokyo+Table+Japanese+cafe!8m2!3d10.0782234!4d76.3768474!10e9!16s%2Fg%2F11l_4mglsk!3m5!1s0x3b080b001584c8e1:0x7284343944838302!8m2!3d10.0782234!4d76.3768474!16s%2Fg%2F11l_4mglsk?entry=ttu" target="_blank" class="btn btn-outline">
                 <i class="ph ph-google-logo"></i> View all 208 reviews on Google Maps
             </a>
         </div>
     </div>
 </section>
 
+<!-- Contact -->
 <section id="contact" class="contact section-padding">
     <div class="container contact-layout reveal">
         <div class="contact-info">
@@ -206,7 +228,7 @@
             <div class="contact-links platform-links">
                 <a href="https://wa.me/917736696950" class="contact-card">
                     <div class="icon-box"><i class="ph ph-whatsapp-logo"></i></div>
-                    <div class="contact-card-text"><span>WhatsApp & Phone</span><strong>077366 96950</strong></div>
+                    <div class="contact-card-text"><span>WhatsApp &amp; Phone</span><strong>077366 96950</strong></div>
                 </a>
                 <a href="https://www.instagram.com/tokyo.table95/" target="_blank" class="contact-card">
                     <div class="icon-box"><i class="ph ph-instagram-logo"></i></div>
@@ -219,15 +241,16 @@
             </div>
         </div>
         <div class="contact-map">
-            <iframe src="https://maps.google.com/maps?q=Aluva,%20Kerala&t=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4!2d76.3768!3d10.0782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080b001584c8e1%3A0x7284343944838302!2sTokyo%20Table%20Japanese%20cafe!5e0!3m2!1sen!2sin!4v1" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
     <div class="container footer-content footer-rich">
         <div class="footer-brand">
-            <h3 class="logo-text">TOKYO TABLE</h3>
+            <img src="images/logo-white.png" alt="Tokyo Table" class="footer-logo-img">
             <p>Japanese cafe comfort in Aluva, serving udon, karaage, matcha, coffee, and fresh-made sides.</p>
         </div>
         <div class="footer-column">
@@ -241,7 +264,7 @@
             <h4>Platforms</h4>
             <a href="https://wa.me/917736696950" target="_blank"><i class="ph ph-whatsapp-logo"></i> WhatsApp</a>
             <a href="https://www.instagram.com/tokyo.table95/" target="_blank"><i class="ph ph-instagram-logo"></i> Instagram</a>
-            <a href="#" target="_blank"><i class="ph ph-map-pin"></i> Google Maps</a>
+            <a href="https://www.google.com/maps/place/Tokyo+Table+Japanese+cafe/@10.0782234,76.3768474,16z/data=!4m15!1m8!3m7!1s0x3b080b001584c8e1:0x7284343944838302!2sTokyo+Table+Japanese+cafe!8m2!3d10.0782234!4d76.3768474!10e9!16s%2Fg%2F11l_4mglsk!3m5!1s0x3b080b001584c8e1:0x7284343944838302!8m2!3d10.0782234!4d76.3768474!16s%2Fg%2F11l_4mglsk?entry=ttu" target="_blank"><i class="ph ph-map-pin"></i> Google Maps</a>
         </div>
         <div class="footer-column">
             <h4>Visit</h4>
@@ -250,145 +273,33 @@
             <span>Fresh bowls, every day</span>
         </div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Tokyo Table. All rights reserved. Japanese Cafe · Udon · Karaage · Matcha · Aluva, Kerala.</p></div>
+    <div class="footer-bottom"><p>&copy; 2026 Tokyo Table. All rights reserved. Japanese Cafe · Udon · Karaage · Matcha · Aluva, Kerala.</p></div>
 </footer>
 
+<!-- Modal -->
 <div id="itemModal" class="modal-backdrop">
     <div class="modal-window">
         <button class="modal-close" id="modalClose"><i class="ph ph-x"></i></button>
         <div class="modal-layout">
-            <div class="modal-image-col">
-                <span class="modal-jp">いただきます</span>
-                <i class="ph ph-bowl-food"></i>
-                <p>Prepared fresh to order</p>
-            </div>
+            <div class="modal-image-col"><span class="modal-jp">いただきます</span><i class="ph ph-bowl-food"></i><p>Prepared fresh to order</p></div>
             <div class="modal-info-col">
                 <span class="modal-category" id="modalCat"></span>
                 <h2 class="modal-title" id="modalTitle"></h2>
                 <div class="modal-price" id="modalPrice"></div>
-                <div class="modal-details"><h3>Dish Details</h3><p id="modalIng"></p></div>
+                <div class="modal-details">
+                    <h3>Dish Details</h3>
+                    <p id="modalIng"></p>
+                </div>
                 <button class="btn btn-primary btn-full modal-add-btn" id="modalAddBtn">Add to Order</button>
             </div>
         </div>
     </div>
 </div>
 
-<div id="authModal" class="auth-modal-backdrop">
-    <div class="auth-modal">
-        <button class="auth-close" id="authClose"><i class="ph ph-x"></i></button>
-        <div class="auth-header">
-            <h2>Admin Sign In</h2>
-            <p>Access is restricted to authorised administrators only.</p>
-        </div>
-
-        <button id="googleSignInBtn" class="btn-google">
-            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M17.64 9.205c0-.639-.057-1.252-.164-1.841H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332Z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58Z" fill="#EA4335"/></svg>
-            Continue with Google
-        </button>
-
-        <div class="auth-divider"><span>or sign in with email</span></div>
-
-        <form id="emailAuthForm" autocomplete="on">
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" id="authEmail" placeholder="admin@example.com" required>
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="authPassword" placeholder="••••••••" required>
-            </div>
-            <div class="auth-error" id="authError"></div>
-            <button type="submit" class="btn btn-primary btn-full" id="emailSubmitBtn">Sign In</button>
-        </form>
-
-        <p class="auth-toggle-line">
-            <span id="authModeLabel">Don't have an account? </span>
-            <button class="auth-toggle-btn" id="authToggleMode">Create account</button>
-        </p>
-    </div>
-</div>
-
-<div id="adminOverlay" class="admin-overlay"></div>
-
-<aside id="adminPanel" class="admin-panel">
-    <div class="admin-header">
-        <div>
-            <h2 class="admin-title"><i class="ph ph-shield-check"></i> Admin Panel</h2>
-            <p class="admin-user-line" id="adminUserEmailDisplay"></p>
-        </div>
-        <div class="admin-header-actions">
-            <button class="admin-btn-signout" id="adminSignOut"><i class="ph ph-sign-out"></i> Sign Out</button>
-            <button class="admin-close-btn" id="adminClose"><i class="ph ph-x"></i></button>
-        </div>
-    </div>
-
-    <div class="admin-body">
-        <div class="seed-banner" id="seedBanner" style="display:none">
-            <i class="ph ph-database"></i>
-            <div>
-                <strong>Menu not yet in database.</strong>
-                <p>Firestore is empty. Click to push the built-in 29 items to get started.</p>
-            </div>
-            <button class="btn btn-primary" id="seedMenuBtn">Initialize Menu</button>
-        </div>
-
-        <div class="admin-form-section">
-            <h3 class="admin-section-title" id="addFormTitle">Add New Item</h3>
-            <form id="adminAddForm" class="admin-add-form">
-                <input type="hidden" id="editItemId">
-                <div class="admin-form-row">
-                    <div class="input-group">
-                        <label>Item Name</label>
-                        <input type="text" id="addName" placeholder="e.g. Chicken Udon" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Category</label>
-                        <select id="addCategory" required>
-                            <option value="">Select…</option>
-                            <option value="udon">Udon</option>
-                            <option value="sides">Sides</option>
-                            <option value="drinks">Beverages</option>
-                            <option value="dessert">Dessert</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label>Price (₹)</label>
-                        <input type="number" id="addPrice" placeholder="e.g. 230" min="1" required>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label>Ingredients / Description</label>
-                    <textarea id="addIngredients" rows="2" placeholder="Short description of the dish…" required></textarea>
-                </div>
-                <div class="admin-form-actions">
-                    <button type="submit" class="btn btn-primary" id="addSubmitBtn">Add Item</button>
-                    <button type="button" class="btn btn-outline" id="addCancelBtn" style="display:none">Cancel Edit</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="admin-list-section">
-            <div class="admin-list-header">
-                <h3 class="admin-section-title">Menu Items <span class="admin-count" id="adminItemCount">0</span></h3>
-                <div class="admin-tabs">
-                    <button class="admin-tab-btn active" data-filter="all">All</button>
-                    <button class="admin-tab-btn" data-filter="udon">Udon</button>
-                    <button class="admin-tab-btn" data-filter="sides">Sides</button>
-                    <button class="admin-tab-btn" data-filter="drinks">Drinks</button>
-                    <button class="admin-tab-btn" data-filter="dessert">Dessert</button>
-                </div>
-            </div>
-            <div id="adminItemsList" class="admin-items-list">
-                <p class="admin-empty">Loading menu…</p>
-            </div>
-        </div>
-    </div>
-</aside>
-
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-
-<script src="app.js?v=4"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
+
+
+
+

@@ -111,25 +111,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- Firebase Fetch ---
+    menuData = [...defaultMenuToSeed]; // Show static menu immediately
+    
     async function fetchMenuData() {
         try {
             const querySnapshot = await getDocs(collection(db, "menu"));
-            menuData = querySnapshot.docs.map(doc => ({ firebaseId: doc.id, ...doc.data() }));
+            const fetched = querySnapshot.docs.map(doc => ({ firebaseId: doc.id, ...doc.data() }));
             
-            if (menuData.length === 0) {
+            if (fetched.length === 0) {
                 console.log("Seeding default menu...");
                 for (const item of defaultMenuToSeed) {
                     await setDoc(doc(db, "menu", item.id), item);
-                    menuData.push({ firebaseId: item.id, ...item });
+                    fetched.push({ firebaseId: item.id, ...item });
                 }
             }
-            renderMenu();
+            menuData = fetched; // Overwrite static with live Firebase data
+            renderMenu(); // Re-render with live data
         } catch (err) {
-            console.error("Failed to load menu", err);
+            console.error("Failed to load menu, falling back to static", err);
         }
     }
-    await fetchMenuData();
+    fetchMenuData(); // Do not await, let it run in background
 
     // --- Admin state update ---
     const adminCatalogActions = document.getElementById('adminCatalogActions');

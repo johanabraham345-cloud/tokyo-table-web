@@ -24,7 +24,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { firebaseConfig } from "./firebase-config.js";
 
-const ADMIN_EMAILS = ["johanabraham345@gmail.com", "pjsc06@gmail.com"];
+const ADMIN_EMAILS = ["johanabraham345@gmail.com", "tokyotable50@gmail.com"];
 const WHATSAPP_NUMBER = "917736696950";
 
 const defaultMenu = [

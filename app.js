@@ -142,18 +142,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (isOwner()) {
             adminCatalogActions.classList.remove('hidden');
             ownerLoginOpen.textContent = 'Admin Dashboard';
-            loginStatus.innerHTML = `Logged in as <b>${loggedInEmail}</b>`;
+            loginStatus.innerHTML = `Logged in as Admin (<b>${loggedInEmail}</b>)`;
             ownerLoginForm.classList.add('hidden');
             ownerLogout.classList.remove('hidden');
         } else {
             adminCatalogActions.classList.add('hidden');
-            ownerLoginOpen.textContent = 'Admin Login';
+            ownerLoginOpen.textContent = 'Account';
             if (loggedInEmail) {
-                loginStatus.innerHTML = `Logged in as <b>${loggedInEmail}</b> (Not an Admin)`;
+                loginStatus.innerHTML = `Logged in as <b>${loggedInEmail}</b>`;
                 ownerLoginForm.classList.add('hidden');
                 ownerLogout.classList.remove('hidden');
             } else {
-                loginStatus.innerHTML = `Please log in to manage catalog.`;
+                ownerLoginOpen.textContent = 'Login';
+                loginStatus.innerHTML = `Please log in to your account.`;
                 ownerLoginForm.classList.remove('hidden');
                 ownerLogout.classList.add('hidden');
             }

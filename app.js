@@ -1,9 +1,17 @@
 // app.js - Tokyo Table Premium
 
-import { firebaseConfig } from './firebase-config.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBVX3pGP02hJTO0zDanZPhIrEp6lq_cw0s",
+    authDomain: "tokyo-table-df75d.firebaseapp.com",
+    projectId: "tokyo-table-df75d",
+    storageBucket: "tokyo-table-df75d.firebasestorage.app",
+    messagingSenderId: "166498379593",
+    appId: "1:166498379593:web:8e9ddbac59a82999129c98"
+};
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

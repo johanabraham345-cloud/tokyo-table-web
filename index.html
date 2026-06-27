@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokyo Table | Japanese Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="nav-logo-area">
+            <img src="images/logo-white.png" alt="Tokyo Table" class="nav-logo-img logo-on-dark">
+            <img src="images/logo-black.png" alt="Tokyo Table" class="nav-logo-img logo-on-light">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn btn-outline nav-btn" id="ownerLoginOpen" type="button" style="margin-right: 10px; padding: 0.5rem 1rem;">Login</button>
+            <a href="#order" class="btn btn-primary nav-btn">Order Online</a>
+            <div class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span></div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero">
+    <div class="hero-slider">
+        <div class="hero-bg hero-slide active" style="background-image: url('images/Tokyo_Table_Exterior__7_.png');"></div>
+        <div class="hero-bg hero-slide" style="background-image: url('images/Tokyo_Table_Exterior__8_.png');"></div>
+        <div class="hero-bg hero-slide" style="background-image: url('images/Tokyo_table_Interior.png');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+        <span class="hero-kicker">東京の食卓 / Tokyo cafe warmth</span>
+        <h1 class="hero-title">Tokyo Table</h1>
+        <p class="hero-text">Hand-pulled udon, crisp karaage and quiet izakaya warmth — a slice of Tokyo cafe culture, served fresh in Kerala.</p>
+        <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary">Explore Menu</a>
+            <a href="#contact" class="btn btn-outline">Find Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<div class="services-bar">
+    <div class="container services-grid">
+        <div class="service-stamp">いらっしゃいませ</div>
+        <div class="service-item"><i class="ph ph-fork-knife"></i> Dine-in</div>
+        <div class="service-item"><i class="ph ph-shopping-bag"></i> Takeaway</div>
+        <div class="service-item"><i class="ph ph-moped"></i> Delivery</div>
+        <div class="service-item"><i class="ph ph-package"></i> Kerbside Pickup</div>
+        <div class="service-item"><i class="ph ph-hand-heart"></i> No-contact Delivery</div>
+    </div>
+</div>
+
+<!-- About -->
+<section id="about" class="about section-padding">
+    <div class="container about-layout">
+        <div class="about-text reveal">
+            <span class="eyebrow">Our Story · 物語</span>
+            <h2 class="section-title">A Taste of Japan, Made in Kerala</h2>
+            <div class="title-underline"></div>
+            <p class="section-desc">From hand-pulled Udon bowls simmered slow to crisp, golden Karaage fried to order, every plate at Tokyo Table is built for a genuine Japanese café experience — unhurried, comforting, and full of flavour. Whether you join us in-house or order in, we bring that spirit straight to your table.</p>
+            <div class="about-stats">
+                <div class="about-stat"><strong>200+</strong><span>5-Star Reviews</span></div>
+                <div class="about-stat"><strong>29</strong><span>Dishes &amp; Drinks</span></div>
+                <div class="about-stat"><strong>7</strong><span>Days a Week</span></div>
+            </div>
+        </div>
+        <div class="about-image reveal">
+            <img src="images/Tokyo_Table_Exterior__1_.png" alt="Tokyo Table exterior">
+        </div>
+    </div>
+</section>
+
+<!-- Menu -->
+<section id="menu" class="menu section-padding">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">Menu · 献立</span>
+            <h2 class="section-title">Culinary Masterpieces</h2>
+            <div class="title-underline center"></div>
+        </div>
+        <div class="menu-tabs reveal">
+            <button class="tab-btn active" data-filter="all">All Items</button>
+            <button class="tab-btn" data-filter="udon">Udon</button>
+            <button class="tab-btn" data-filter="sides">Sides</button>
+            <button class="tab-btn" data-filter="drinks">Beverages</button>
+            <button class="tab-btn" data-filter="dessert">Dessert</button>
+        </div>
+        <div class="admin-catalog-actions reveal" id="adminCatalogActions" style="text-align: center; margin-bottom: 2rem; display: none;">
+            <button class="btn btn-primary" id="addMenuOpen" type="button">+ Add Menu Item</button>
+        </div>
+        <div class="menu-grid reveal" id="menuGrid"></div>
+        <div class="menu-actions reveal">
+            <button class="btn btn-outline see-more-btn" id="seeMoreMenu" type="button">See More</button>
+        </div>
+    </div>
+</section>
+
+<!-- Order -->
+<section id="order" class="order section-padding">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">Order · 注文</span>
+            <h2 class="section-title">Build Your Table</h2>
+            <div class="title-underline center"></div>
+        </div>
+        <div class="order-layout reveal">
+            <div class="order-panel">
+                <h3>Delivery Details</h3>
+                <p class="panel-note">Add your favorites, enter your details, and send the final order directly through WhatsApp.</p>
+                <form id="checkout-form" class="checkout-form">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" id="cust-name" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="cust-phone" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Delivery Address</label>
+                        <input type="text" id="cust-address" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submit-order" disabled><i class="ph ph-whatsapp-logo"></i> Send on WhatsApp</button>
+                </form>
+                <div class="order-success" id="order-success">
+                    <i class="ph ph-check-circle"></i>
+                    <h3>WhatsApp Order Ready</h3>
+                    <p class="section-desc">Your order opens in WhatsApp with all details filled in.</p>
+                </div>
+            </div>
+            <div class="cart-box">
+                <h3>Your Selections</h3>
+                <p class="panel-note">Review your table before sending it to us on WhatsApp.</p>
+                <div id="cart-items"><div class="empty-cart-msg">Your table is waiting. Choose a masterpiece from the menu.</div></div>
+                <div class="cart-total" id="cart-total">
+                    <span>Total</span>
+                    <span id="total-amount">₹0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="reviews section-padding">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">Reviews · 声</span>
+            <h2 class="section-title">What Guests Are Saying</h2>
+            <div class="review-summary" aria-label="4.8 rating from 221 reviews">
+                <i class="ph-fill ph-star"></i>
+                <span>4.8 (221) reviews</span>
+            </div>
+            <div class="title-underline center"></div>
+        </div>
+
+        <div class="reviews-grid reveal">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/avatar-joel.png" alt="Joel Davis" class="review-avatar-img">
+                    <div class="review-meta">
+                        <h4>Joel Davis</h4>
+                        <span class="review-badge">Local Guide · 25 reviews · 41 photos</span>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    <span class="review-time">4 months ago</span>
+                </div>
+                <p class="review-text">I visited this place with my cousin and the food was really good as of what I tried but the customer service was one of the best I have had, the owner called us boss😄 and welcomed us in and he was very friendly. The items I would recommend would be the dry beef udon and the dynamite chicken, the dynamite chicken was soo good that by the time we thought of taking the photo we only had 3 piece remaining. Must try spot if you are near Aluva.</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/avatar-nisha.png" alt="Nisha Francis" class="review-avatar-img">
+                    <div class="review-meta">
+                        <h4>Nisha Francis</h4>
+                        <span class="review-badge">Local Guide · 5 reviews · 5 photos</span>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    <span class="review-time">3 months ago</span>
+                </div>
+                <p class="review-text">We tried the chicken noodles udon, and dynamite chicken — all were absolutely delicious! The dynamite chicken was perfectly crispy and flavourful, and the sauces were just amazing, adding the perfect taste to every bite. Overall, a great place to enjoy tasty food. Will definitely visit again! 😊</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/avatar-anannya.png" alt="Anannya Bhaskar" class="review-avatar-img">
+                    <div class="review-meta">
+                        <h4>Anannya Bhaskar</h4>
+                        <span class="review-badge">6 reviews · 7 photos</span>
+                    </div>
+                </div>
+                <div class="review-rating">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    <span class="review-time">4 months ago</span>
+                </div>
+                <p class="review-text">Absolutely loved our experience at Tokyo Table! We started with the Dynamite Chicken — hands down excellent. Then tried the rice bowl with fried chicken, fried chicken udon, and soupy beef udon — every single dish was exceptional, comforting, and bursting with flavor.</p>
+            </div>
+        </div>
+
+        <div class="reviews-action reveal">
+            <a href="https://www.google.com/maps/place/Tokyo+Table+Japanese+cafe/@10.0782234,76.3768474,16z/data=!4m15!1m8!3m7!1s0x3b080b001584c8e1:0x7284343944838302!2sTokyo+Table+Japanese+cafe!8m2!3d10.0782234!4d76.3768474!10e9!16s%2Fg%2F11l_4mglsk!3m5!1s0x3b080b001584c8e1:0x7284343944838302!8m2!3d10.0782234!4d76.3768474!16s%2Fg%2F11l_4mglsk?entry=ttu" target="_blank" class="btn btn-outline">
+                <i class="ph ph-google-logo"></i> View all 221 reviews on Google Maps
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact section-padding">
+    <div class="container contact-layout reveal">
+        <div class="contact-info">
+            <span class="eyebrow">Contact · 場所</span>
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="title-underline"></div>
+            <p class="section-desc">Reach out for reservations, large orders, or a quiet bowl of udon after a long day. We look forward to hosting you.</p>
+            <div class="contact-links platform-links">
+                <a href="https://wa.me/917736696950" class="contact-card">
+                    <div class="icon-box"><i class="ph ph-whatsapp-logo"></i></div>
+                    <div class="contact-card-text"><span>WhatsApp &amp; Phone</span><strong>077366 96950</strong></div>
+                </a>
+                <a href="https://www.instagram.com/tokyo.table95/" target="_blank" class="contact-card">
+                    <div class="icon-box"><i class="ph ph-instagram-logo"></i></div>
+                    <div class="contact-card-text"><span>Instagram</span><strong>@tokyo.table95</strong></div>
+                </a>
+                <div class="contact-card">
+                    <div class="icon-box"><i class="ph ph-map-pin"></i></div>
+                    <div class="contact-card-text"><span>Location</span><strong>Aluva, Kerala, India</strong></div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4!2d76.3768!3d10.0782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080b001584c8e1%3A0x7284343944838302!2sTokyo%20Table%20Japanese%20cafe!5e0!3m2!1sen!2sin!4v1" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-content footer-rich">
+        <div class="footer-brand">
+            <img src="images/logo-white.png" alt="Tokyo Table" class="footer-logo-img">
+            <p>Japanese cafe comfort in Aluva, serving udon, karaage, matcha, coffee, and fresh-made sides.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Explore</h4>
+            <a href="#about">Our Story</a>
+            <a href="#menu">Culinary Masterpieces</a>
+            <a href="#reviews">Guest Reviews</a>
+            <a href="#order">Order on WhatsApp</a>
+        </div>
+        <div class="footer-column footer-platforms">
+            <h4>Platforms</h4>
+            <a href="https://wa.me/917736696950" target="_blank"><i class="ph ph-whatsapp-logo"></i> WhatsApp</a>
+            <a href="https://www.instagram.com/tokyo.table95/" target="_blank"><i class="ph ph-instagram-logo"></i> Instagram</a>
+            <a href="https://www.google.com/maps/place/Tokyo+Table+Japanese+cafe/@10.0782234,76.3768474,16z/data=!4m15!1m8!3m7!1s0x3b080b001584c8e1:0x7284343944838302!2sTokyo+Table+Japanese+cafe!8m2!3d10.0782234!4d76.3768474!10e9!16s%2Fg%2F11l_4mglsk!3m5!1s0x3b080b001584c8e1:0x7284343944838302!8m2!3d10.0782234!4d76.3768474!16s%2Fg%2F11l_4mglsk?entry=ttu" target="_blank"><i class="ph ph-map-pin"></i> Google Maps</a>
+        </div>
+        <div class="footer-column">
+            <h4>Visit</h4>
+            <span>Aluva, Kerala, India</span>
+            <span>Dine-in · Takeaway · Delivery</span>
+            <span>Fresh bowls, every day</span>
+        </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Tokyo Table. All rights reserved. Japanese Cafe · Udon · Karaage · Matcha · Aluva, Kerala.</p></div>
+</footer>
+
+<!-- Modal -->
+<div id="itemModal" class="modal-backdrop">
+    <div class="modal-window">
+        <button class="modal-close" id="modalClose"><i class="ph ph-x"></i></button>
+        <div class="modal-layout">
+            <div class="modal-image-col"><span class="modal-jp">いただきます</span><i class="ph ph-bowl-food"></i><p>Prepared fresh to order</p></div>
+            <div class="modal-info-col">
+                <span class="modal-category" id="modalCat"></span>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-price" id="modalPrice"></div>
+                <div class="modal-details">
+                    <h3>Dish Details</h3>
+                    <p id="modalIng"></p>
+                </div>
+                <button class="btn btn-primary btn-full modal-add-btn" id="modalAddBtn">Add to Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Modal -->
+<div id="ownerModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-window" style="max-width: 400px; padding: 30px;">
+        <button class="modal-close" id="ownerModalClose"><i class="ph ph-x"></i></button>
+        <h2 style="margin-bottom: 20px;">Login</h2>
+        <div id="loginStatus" style="margin-bottom: 15px; text-align: center;"></div>
+        <button class="btn btn-outline btn-full" id="googleLoginBtn" type="button" style="margin-bottom: 15px; display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <i class="ph-fill ph-google-logo"></i> Sign in with Google
+        </button>
+        <div style="text-align: center; margin-bottom: 15px;">OR</div>
+        <form id="ownerLoginForm">
+            <div class="input-group" style="margin-bottom: 15px;">
+                <label>Email</label>
+                <input id="ownerEmailInput" type="email" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: transparent; color: white;">
+            </div>
+            <div class="input-group" style="margin-bottom: 20px;">
+                <label>Password</label>
+                <input id="ownerPasswordInput" type="password" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: transparent; color: white;">
+            </div>
+            <button class="btn btn-primary btn-full" type="submit" id="emailLoginBtn">Login with Email</button>
+        </form>
+        <button class="btn btn-outline btn-full hidden" id="ownerLogout" type="button" style="margin-top: 15px;">Logout</button>
+    </div>
+</div>
+
+<!-- Add/Edit Menu Modal -->
+<div id="addMenuModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-window" style="max-width: 500px; padding: 30px;">
+        <button class="modal-close" id="addMenuClose"><i class="ph ph-x"></i></button>
+        <h2 style="margin-bottom: 20px;" id="menuFormTitle">Add Menu Item</h2>
+        <form id="menuForm">
+            <input type="hidden" id="menuFormId">
+            <div class="input-group" style="margin-bottom: 15px;">
+                <label>Name</label>
+                <input id="menuFormName" type="text" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: transparent; color: white;">
+            </div>
+            <div class="input-group" style="margin-bottom: 15px;">
+                <label>Cover Image (Optional)</label>
+                <input id="menuFormImage" type="hidden">
+                <input id="menuFormImageFile" type="file" accept="image/*" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: transparent; color: white;">
+                <img id="menuImagePreview" alt="Selected cover preview" style="display: none; width: 100%; max-height: 150px; object-fit: cover; margin-top: 10px; border-radius: 4px;">
+            </div>
+            <div class="input-row" style="margin-bottom: 15px; display: flex; gap: 15px;">
+                <div class="input-group" style="flex: 1;">
+                    <label>Category</label>
+                    <select id="menuFormCategory" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: transparent; color: white;">
+                        <option value="udon" style="color: black;">Udon</option>
+                        <option value="sides" style="color: black;">Sides</option>
+                        <option value="drinks" style="color: black;">Beverages</option>
+                        <option value="dessert" style="color: black;">Dessert</option>
+                    </select>
+                </div>
+                <div class="input-group" style="flex: 1;">
+                    <label>Price (₹)</label>
+                    <input id="menuFormPrice" type="number" min="0" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: transparent; color: white;">
+                </div>
+            </div>
+            <div class="input-group" style="margin-bottom: 20px;">
+                <label>Ingredients / Description</label>
+                <textarea id="menuFormIngredients" rows="3" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; background: transparent; color: white; resize: vertical;"></textarea>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Save Menu Item</button>
+        </form>
+    </div>
+</div>
+
+<script type="module" src="app.js?v=9"></script>
+</body>
+</html>
+
+
+
+
